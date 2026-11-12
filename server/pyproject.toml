@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "music-app-server"
+version = "0.1.0"
+description = "Backend for the AI music discovery app"
+requires-python = ">=3.12"
+dependencies = [
+    # Web server
+    "fastapi",
+    "uvicorn[standard]",
+
+    # Data shapes and settings
+    "pydantic>=2",
+    "pydantic-settings",
+
+    # Calling MusicBrainz and ListenBrainz
+    "httpx",
+
+    # Ranking math
+    "numpy",
+
+    # Database
+    "sqlalchemy>=2",
+    "alembic",
+    "psycopg[binary]>=3",
+
+    # Gemini
+    "google-genai",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-recording",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
