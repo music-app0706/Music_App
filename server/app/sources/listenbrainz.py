@@ -1,16 +1,10 @@
 from app.sources.http import get, post
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from app.config import settings
 from urllib.parse import quote
 
 BASE = "https://api.listenbrainz.org/1"
 LABS_BASE = "https://labs.api.listenbrainz.org"
 SIMILAR_ALGORITHM = "session_based_days_7500_session_300_contribution_5_threshold_10_limit_100_filter_True_skip_30"
-
-class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
-    listenbrainz_token: str = ""
-
-settings = Settings()
 
 AUTH = {"Authorization": f"Token {settings.listenbrainz_token}"}
 
