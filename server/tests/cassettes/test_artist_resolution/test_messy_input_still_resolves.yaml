@@ -1,0 +1,142 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - musicbrainz.org
+      user-agent:
+      - MusicApp/0.1 (https://github.com/music-app0706/Music_App)
+    method: GET
+    uri: https://musicbrainz.org/ws/2/artist?query=artist%3A%22radiohead%22&fmt=json&limit=5
+  response:
+    body:
+      string: '{"error": "The MusicBrainz web server is currently busy. Please try
+        again later."}
+
+        '
+    headers:
+      access-control-allow-origin:
+      - '*'
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Sat, 14 Nov 2026 00:28:20 GMT
+      keep-alive:
+      - timeout=15
+      retry-after:
+      - '0'
+      server:
+      - openresty
+      transfer-encoding:
+      - chunked
+      x-mb-gateway:
+      - rex
+      x-mb-rate-limiter:
+      - lua
+      x-ratelimit-limit:
+      - '1900'
+      x-ratelimit-remaining:
+      - '437'
+      x-ratelimit-reset:
+      - '1794616100'
+      x-ratelimit-who:
+      - search-shed
+      x-ratelimit-zone:
+      - search
+    status:
+      code: 503
+      message: Service Temporarily Unavailable
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - musicbrainz.org
+      user-agent:
+      - MusicApp/0.1 (https://github.com/music-app0706/Music_App)
+    method: GET
+    uri: https://musicbrainz.org/ws/2/artist?query=artist%3A%22radiohead%22&fmt=json&limit=5
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAALVXTY/cRBD9K5YPnKZDt92223sLWQEKOSBYDoByqP7wjFmPPdiezZciZTMHBELK
+        hQOcg4SCOHBBisSRf4KJ+BtUe3bH9qy9C1p2tBrtuKqrX7167a564qrSQG20e+B61AsJY4TxI0oP
+        PHHgsVuBzz5zZ64q1nntHkQzt0iSyuC/dOZCWadVXbkHnz9xUxsAIi6ZjBISMQgIpxgr5pwRTWVg
+        OPO8iDEMVj9aGfR+ryzWq7OfpF1vuM+SIAmJDLRHfO5rIqQfksgLaZQkicT4uKBSRYkBGEUMOSxt
+        rI9Ap8XCgLbmoqzJyPM2h/KR3fkd16I34B6cIRcQBRxYSCj1IuKDFxMZ6oh4klMDlAtmdIf8zlmk
+        PnYaak3BcCJUxIlPpSTSJhAHWhmdxCHTxt3h/SRPkXPngzSf62K5B/qCMUsTQ6oV5BavybWtVr7O
+        sqdPZ6408zQng2S04FRz6RMRi4jwEKsae0ISPxbaRCFVyuO9ZNJ6mEmYaJF4MRAfEyK+lygSC6qJ
+        gTCOZBhriESXyW3ZwswJ/h0t8Fm1l82ow2UZpVWeWlG5dPthLOBRwELPvb+3sM0dt2BxbHXVj4P1
+        zVKozFadU5LokhYxh0RCSDyBKvCRISJo5GHSWoah1JRL5Y7KLSsUZPahyTtSb7dHw2ndZ+6qTJdg
+        lVeXa3NeMo2nbgu2Rd77/XQ2RFy+fQEui/3IcMqJjAVDuDIiggWMcCVCIxMltOipbRfgHOt21zOs
+        Hxso1cJZpHjCe1i3Pv8V69/f/fbmxa9vXrz+6/cfr0HwXpgdx48XN8Rx8/zb5vSn5nTTnH7TnL5u
+        Tl82p6+ukUCz+aXZfNU8f9k8/7nZfN9sNs3m634mX8ANZbLTpvOWc7Qols6nRXlsrqGeyYA3r6Z2
+        a+f966l/EOQGMONbqYb59kVzdk+yuDt7hTp2bV7nJr4zmcyouizyVPUdukttVVQ12V/P/Z0dstqU
+        OdTpiXH23Tov83BlMCOT15BNAJFligJcjKOYl+t8bgYrd7ZUL8cN6+PxYHYnyPP0y/UgYtBFzHV6
+        MRtvhDMYd+iRMu5gIayK1YCsDiD2NBd2Z8OKjBDCR9m+JJDJ59ke451R4S0pTensoewJA8qsWC2K
+        fICCDMNDrieKZike4bCLvzS4Wi2KbKjMLkTxMCnKifCqLKqqOLH4y2I+IYOiqDMzYbSsOYjeaYGO
+        b2KLeAm7O5FcUgLkOMUy7bPcY1H9+eyHP17VkNbOMjXrhw6cALqMnjKrm8l65Wttxi11CSvHDE9R
+        D0EF2J1rRxUPqivV3qbqLNfV1Osks/W0nfNopFbaI2ej54HlLE1VTe/VQ44tmUfwS0wwYh448xJO
+        Jsp78qh8vD5epNVaETtlmAppv29d2/e/bxRAFMc4XYAhPFDYZoNmRCqQ2ILTyDesmxOCqJPW7irz
+        97rUoUWnlZXHfI3MFrbDvAOrqk3XuXd0eMvZTj6X97HnWH2ZAAQ4Wfg4GPEkslixr8b+gXkq9EMT
+        hKNYu2vXmxpqWsvVEBgTMoJQ4BTAY4QQAIlZwglLsGkJFY5WIhmFcHjXuXKwmjmHd/8VCukxkL5S
+        RAijCdceDkiaMhIaLYWv/Cim9P8bDoPuaL4Lx8b5MIOqxvJN5TPpNDJfCRrKWPqSBBqwpAbAdoKa
+        RODh4Ki0obrX3F1zvrpnUoXyN+Ue4P7zy6ap0YEJJ31GaEy8YG9swkP2DxuLnU8SEAAA
+    headers:
+      access-control-allow-origin:
+      - '*'
+      connection:
+      - keep-alive
+      content-encoding:
+      - gzip
+      content-length:
+      - '1305'
+      content-security-policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self' data:; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      content-type:
+      - application/json
+      date:
+      - Sat, 14 Nov 2026 00:28:21 GMT
+      etag:
+      - '"NTljZmVjMDAwMDAwMDAwMFNvbHI=--gzip"'
+      keep-alive:
+      - timeout=15
+      last-modified:
+      - Sat, 14 Nov 2026 00:27:19 GMT
+      vary:
+      - Accept-Encoding
+      x-cache-status:
+      - MISS
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-mb-gateway:
+      - rex
+      x-ratelimit-limit:
+      - '400'
+      x-ratelimit-remaining:
+      - '279'
+      x-ratelimit-reset:
+      - '1794616102'
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
