@@ -6,4 +6,6 @@ def search_artist(name: str, limit: int = 5) -> list[dict]:
     escaped = name.replace("\\", "\\\\").replace('"', '\\"')
     query = f'artist:"{escaped}"'
     data = get(f"{BASE}/artist", {"query": query, "fmt": "json", "limit": limit})
+    if not data:
+        return []
     return data.get("artists", [])

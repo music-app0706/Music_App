@@ -7,7 +7,7 @@ USER_AGENT = "MusicApp/0.1 (https://github.com/music-app0706/Music_App)"
 _last_request = 0.0
 MAX_RETRIES = 3
 
-def _request(method: str, url: str, params: dict | None = None, json: dict | None = None) -> dict | list:
+def _request(method: str, url: str, params: dict | None = None, json: dict | None = None) -> dict | list | None:
     global _last_request
     for attempt in range(MAX_RETRIES + 1):
         wait = 1.0 - (time.monotonic() - _last_request)
@@ -22,12 +22,15 @@ def _request(method: str, url: str, params: dict | None = None, json: dict | Non
             time.sleep(2 ** attempt)
             continue
 
+        if response.status_code == 204:
+            return None
+
         response.raise_for_status()
         return response.json()
 
 
-def get(url: str, params: dict | None = None) -> dict | list:
+def get(url: str, params: dict | None = None) -> dict | list | None:
     return _request("GET", url, params=params)
 
-def post(url: str, json: dict) -> dict | list:
+def post(url: str, json: dict) -> dict | list | None:
     return _request("POST", url, json=json)
