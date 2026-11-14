@@ -1,14 +1,23 @@
+from difflib import SequenceMatcher
+
 from app.sources.musicbrainz import search_artist
 
 MIN_SCORE = 90
+MIN_NAME_SIMILARITY = 0.8
+
+def _similar(a: str, b: str) -> float:
+    return SequenceMatcher(None, a.lower(), b.lower()).ratio()
 
 def resolve_artist(name: str) -> str | None:
+    
     cleaned = name.strip()
     if not cleaned:
         return None
     
     results = search_artist(cleaned)
-    good = [artist for artist in results if artist.get("score", 0) >= MIN_SCORE]
+    good = [artist for artist in results if artist.get("score", 0) >= MIN_SCORE 
+    and _similar(artist["name"], cleaned) >= MIN_NAME_SIMILARITY]
+    
     if not good: 
         return None
     

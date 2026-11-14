@@ -1,0 +1,201 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - musicbrainz.org
+      user-agent:
+      - MusicApp/0.1 (https://github.com/music-app0706/Music_App)
+    method: GET
+    uri: https://musicbrainz.org/ws/2/artist?query=artist%3A%22Nirvana%22&fmt=json&limit=5
+  response:
+    body:
+      string: '{"error": "The MusicBrainz web server is currently busy. Please try
+        again later."}
+
+        '
+    headers:
+      access-control-allow-origin:
+      - '*'
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Sat, 14 Nov 2026 00:32:28 GMT
+      keep-alive:
+      - timeout=15
+      retry-after:
+      - '0'
+      server:
+      - openresty
+      transfer-encoding:
+      - chunked
+      x-mb-gateway:
+      - rex
+      x-mb-rate-limiter:
+      - lua
+      x-ratelimit-limit:
+      - '15'
+      x-ratelimit-remaining:
+      - '13'
+      x-ratelimit-reset:
+      - '1794616357'
+      x-ratelimit-who:
+      - global
+      x-ratelimit-zone:
+      - global
+    status:
+      code: 503
+      message: Service Temporarily Unavailable
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - musicbrainz.org
+      user-agent:
+      - MusicApp/0.1 (https://github.com/music-app0706/Music_App)
+    method: GET
+    uri: https://musicbrainz.org/ws/2/artist?query=artist%3A%22Nirvana%22&fmt=json&limit=5
+  response:
+    body:
+      string: '{"error": "The MusicBrainz web server is currently busy. Please try
+        again later."}
+
+        '
+    headers:
+      access-control-allow-origin:
+      - '*'
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Sat, 14 Nov 2026 00:32:30 GMT
+      keep-alive:
+      - timeout=15
+      retry-after:
+      - '0'
+      server:
+      - openresty
+      transfer-encoding:
+      - chunked
+      x-mb-gateway:
+      - rex
+      x-mb-rate-limiter:
+      - lua
+      x-ratelimit-limit:
+      - '1900'
+      x-ratelimit-remaining:
+      - '664'
+      x-ratelimit-reset:
+      - '1794616351'
+      x-ratelimit-who:
+      - search-shed
+      x-ratelimit-zone:
+      - search
+    status:
+      code: 503
+      message: Service Temporarily Unavailable
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - musicbrainz.org
+      user-agent:
+      - MusicApp/0.1 (https://github.com/music-app0706/Music_App)
+    method: GET
+    uri: https://musicbrainz.org/ws/2/artist?query=artist%3A%22Nirvana%22&fmt=json&limit=5
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      access-control-allow-origin:
+      - '*'
+      connection:
+      - keep-alive
+      content-encoding:
+      - gzip
+      content-length:
+      - '1536'
+      content-security-policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self' data:; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      content-type:
+      - application/json
+      date:
+      - Sat, 14 Nov 2026 00:32:32 GMT
+      etag:
+      - '"ODMzYmVjMDAwMDAwMDAwMFNvbHI=--gzip"'
+      keep-alive:
+      - timeout=15
+      last-modified:
+      - Sat, 14 Nov 2026 00:31:12 GMT
+      vary:
+      - Accept-Encoding
+      x-cache-status:
+      - MISS
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-mb-gateway:
+      - rex
+      x-ratelimit-limit:
+      - '400'
+      x-ratelimit-remaining:
+      - '278'
+      x-ratelimit-reset:
+      - '1794616353'
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
