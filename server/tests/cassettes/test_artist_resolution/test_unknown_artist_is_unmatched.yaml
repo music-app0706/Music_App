@@ -1,0 +1,202 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - musicbrainz.org
+      user-agent:
+      - MusicApp/0.1 (https://github.com/music-app0706/Music_App)
+    method: GET
+    uri: https://musicbrainz.org/ws/2/artist?query=artist%3A%22Radiohead%22&fmt=json&limit=5
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAALVXwY7cRBD9FcsHTtOhu92223sLiQCFHBAsB0A5VHeXZ8x67MH2bBKiSGzmgEBI
+        uXCAc5BQEAcuSJE48ieYiN+g27MZe2btDWjZ0Wq046qufvXqtbvqka8rhAaNf+RzyiPCGGHimNIj
+        Lo84v5Gw8BN/5utyXTT+UTzzyzSt0f5LZz5UTVY3tX/06SM/cwEgFoqpOCUxg5AIamMlQjBiqApR
+        MM5jxmyw5uEKrfc7Vblenf8k3XoUAUvDNCIqNJwEIjBEqiAiMY9onKapsvHtglqXlQ3AqMVQwNLF
+        +gBMVi4QjDOXVUNGnnc5VA/dzm/5Dj2Cf3SOXEIcCmARoZTHJACeEBWZmHAlKAIVkqHpkd86jzTE
+        TiNjKKAgUseCBFQpolwCSWg0mjSJmEF/h/ejIrOce+9lxdyUywPQF4x5liKpV1A4vFgYV61ineeP
+        H898hfOsIHvJGCmoESogMpExEZGtasKlIkEiDcYR1ZqLQTJZs59JlBqZ8gRIYBMiAU81SSQ1BCFK
+        YhUlBmLZZ3JTdTALYv+OF/ZZfZDNqMNlGWV1kTlR+XT7YSwUccgi7t87WNjlbrdgSeJ0NYxj65tn
+        UONWnVOS6JOWiYBUQUS4tCoILENE0pjbpI2KImWoUNoflVteasjdQyx6Um92R8Pr3Gf+qsqW4JTX
+        VGt8VTJjT90WbId88PvxbB9x9eYFuCwJYhRUEJVIZuGqmEgWMiK0jFClWho5UNsuwCus213PsX6I
+        UOmFt8jsCR9g3fr8V6x/f/fby6e/vnz64q/ff7wCwQdhdhx/sbgmjtsn37ZnP7Vnm/bsm/bsRXv2
+        rD17foUE2s0v7ear9smz9snP7eb7drNpN18PM/kMrimTnTa9N7zjRbn0Pi6rE7yCeiYDXr+auq29
+        d6+m/r0g14DZvpUamG9fNOf3JEv6s1fqE9/l9cokdibMUTdVWWR66NBfaquybsjhehHs7JA3WBXQ
+        ZKfoHbr1XvhghTYjLBrIJ4CoKrMCXIyjmFfrYo57K3e2zCzHDeuT8WBuJyiK7PP1XsSwj1iY7GI2
+        fIQzGHcYkDLu4CCsytUeWT1A29Nc2J3tV2SEEDHK9iWBsJjnB4z3Rm1vSYWVd4ByIAyo8nK1KIs9
+        FGQ/PBRmomiO4hEO+/hLtKv1osz3ldmHKB+kZTURXldlXZenDn9VzidkUJZNjhNGx5pn0Xsd0PFN
+        XBEvYXcnkktKYDnObJkOWR6wqP/88oc/njeQNd4yw/UDD07BuoyeMqebyXoVa4PjlqaClYf7p2iA
+        oAbbnRtPl/fr16q9S9Vbruup10nu6uk659FInbRHzsbAw5azwrqe3muA3LZknNgvOcEI3vfmFZxO
+        lPf0YfXF+mSR1WtN3JSBtaX9nnPt3v8BaoA4Sex0AUhEqG2bDYYRpUHZFpzGAbJ+TgjjXlq7qyw4
+        6FL3LSarnTzma8ts6TrMW7Cqu3S9u8e3b3jbyefyPvYcK2NSxRBJ24KLhIg0BJKwVBCW2o4h0nau
+        keko1tt3vNdONTPv9p1/hSIIVAoQ2vkmsOOZSGPHmO3ubRfDuI6CCMNoFEV/+fMpEJ3l9RAUZ6AC
+        rYmUaIgw3A5IhjISoVEy0EGcUPr/DYdhfzTfhhP03s+hbmz5piiddBqZrySNVKICRUIDlkwEcJ2g
+        ITFwOzhqg9QMmrsrzld3MdNW/lgdAB4+v2yaGh2Y7KTPCE0IDw/GJnvI/gFYPffHEhAAAA==
+    headers:
+      access-control-allow-origin:
+      - '*'
+      connection:
+      - keep-alive
+      content-encoding:
+      - gzip
+      content-length:
+      - '1306'
+      content-security-policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self' data:; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      content-type:
+      - application/json
+      date:
+      - Sat, 14 Nov 2026 00:28:22 GMT
+      etag:
+      - '"OGMyNzFjMDAwMDAwMDAwMFNvbHI=--gzip"'
+      keep-alive:
+      - timeout=15
+      last-modified:
+      - Sat, 14 Nov 2026 00:27:19 GMT
+      vary:
+      - Accept-Encoding
+      x-cache-status:
+      - MISS
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-mb-gateway:
+      - rex
+      x-ratelimit-limit:
+      - '400'
+      x-ratelimit-remaining:
+      - '191'
+      x-ratelimit-reset:
+      - '1794616103'
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - musicbrainz.org
+      user-agent:
+      - MusicApp/0.1 (https://github.com/music-app0706/Music_App)
+    method: GET
+    uri: https://musicbrainz.org/ws/2/artist?query=artist%3A%22zzqx+not+a+real+band+9381%22&fmt=json&limit=5
+  response:
+    body:
+      string: '{"error": "The MusicBrainz web server is currently busy. Please try
+        again later."}
+
+        '
+    headers:
+      access-control-allow-origin:
+      - '*'
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Sat, 14 Nov 2026 00:28:24 GMT
+      keep-alive:
+      - timeout=15
+      retry-after:
+      - '0'
+      server:
+      - openresty
+      transfer-encoding:
+      - chunked
+      x-mb-gateway:
+      - rex
+      x-mb-rate-limiter:
+      - lua
+      x-ratelimit-limit:
+      - '1900'
+      x-ratelimit-remaining:
+      - '309'
+      x-ratelimit-reset:
+      - '1794616104'
+      x-ratelimit-who:
+      - search-shed
+      x-ratelimit-zone:
+      - search
+    status:
+      code: 503
+      message: Service Temporarily Unavailable
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - musicbrainz.org
+      user-agent:
+      - MusicApp/0.1 (https://github.com/music-app0706/Music_App)
+    method: GET
+    uri: https://musicbrainz.org/ws/2/artist?query=artist%3A%22zzqx+not+a+real+band+9381%22&fmt=json&limit=5
+  response:
+    body:
+      string: '{"created":"2026-11-14T00:28:25.614Z","count":0,"offset":0,"artists":[]}'
+    headers:
+      access-control-allow-origin:
+      - '*'
+      connection:
+      - keep-alive
+      content-length:
+      - '72'
+      content-security-policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self' data:; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      content-type:
+      - application/json
+      date:
+      - Sat, 14 Nov 2026 00:28:25 GMT
+      etag:
+      - '"YThhYmVjMDAwMDAwMDAwMFNvbHI="'
+      keep-alive:
+      - timeout=15
+      last-modified:
+      - Sat, 14 Nov 2026 00:27:19 GMT
+      vary:
+      - Accept-Encoding
+      x-cache-status:
+      - MISS
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-mb-gateway:
+      - rex
+      x-ratelimit-limit:
+      - '400'
+      x-ratelimit-remaining:
+      - '232'
+      x-ratelimit-reset:
+      - '1794616106'
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
