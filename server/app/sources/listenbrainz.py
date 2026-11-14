@@ -1,19 +1,28 @@
 from app.sources.http import get, post
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from urllib.parse import quote
 
 BASE = "https://api.listenbrainz.org/1"
 LABS_BASE = "https://labs.api.listenbrainz.org"
 SIMILAR_ALGORITHM = "session_based_days_7500_session_300_contribution_5_threshold_10_limit_100_filter_True_skip_30"
 
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+    listenbrainz_token: str = ""
+
+settings = Settings()
+
+AUTH = {"Authorization": f"Token {settings.listenbrainz_token}"}
+
 def user_top_artists(username: str) -> list[dict]:
     formatted_name = quote(username, safe="")
-    data = get(f"{BASE}/stats/user/{formatted_name}/artists", {"range": "all_time", "count": 100})
+    data = get(f"{BASE}/stats/user/{formatted_name}/artists", {"range": "all_time", "count": 100}, headers=AUTH)
     if not data:
         return []
     return data["payload"].get("artists", [])
 
 def similar_artists(mbid: str) -> list[dict]:
-    data = get(f"{LABS_BASE}/similar-artists/json", {"artist_mbids": mbid, "algorithm": SIMILAR_ALGORITHM})
+    data = get(f"{LABS_BASE}/similar-artists/json", {"artist_mbids": mbid, "algorithm": SIMILAR_ALGORITHM}, headers=AUTH)
     if not data:
         return []
     return data
@@ -21,7 +30,7 @@ def similar_artists(mbid: str) -> list[dict]:
 def artist_popularity(mbids: list[str]) -> dict:
     if not mbids:
         return {}
-    data = post(f"{BASE}/popularity/artist", {"artist_mbids": mbids})
+    data = post(f"{BASE}/popularity/artist", {"artist_mbids": mbids}, headers=AUTH)
     if not data:
         return {}
     artists = {artist["artist_mbid"]: artist["total_user_count"] for artist in data}
@@ -29,7 +38,7 @@ def artist_popularity(mbids: list[str]) -> dict:
 
 def artist_top_recordings(mbid: str) -> list[dict]:
     formatted_id = quote(mbid, safe="")
-    data = get(f"{BASE}/popularity/top-recordings-for-artist/{formatted_id}")
+    data = get(f"{BASE}/popularity/top-recordings-for-artist/{formatted_id}", headers=AUTH)
     if not data:
         return []
     return data
