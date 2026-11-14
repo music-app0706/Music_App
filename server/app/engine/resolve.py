@@ -10,7 +10,7 @@ def _similar(a: str, b: str) -> float:
 
 def resolve_artist(name: str) -> str | None:
     
-
+    
     cleaned = name.strip()
     if not cleaned:
         return None
