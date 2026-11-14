@@ -44,7 +44,12 @@ One or two sentences on what this PR does.
 The task or problem it solves.
 
 ## How to test
-Steps or commands to check it works, e.g. `pytest tests/test_artist_resolution.py`
+```
+
+cd server
+pytest tests/test_artist_resolution.py
+
+```
 
 ## Checklist
 - [ ] Branch is named `type/short-description`
