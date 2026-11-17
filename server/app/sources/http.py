@@ -6,11 +6,16 @@ USER_AGENT = "MusicApp/0.1 (https://github.com/music-app0706/Music_App)"
 
 _last_request = 0.0
 MAX_RETRIES = 3
+# MusicBrainz allows about 1 request per second, and a 503 means "slow
+# down", so retries back off 1s, 2s, 4s. Tests that replay recorded
+# responses set both to 0 (see tests/conftest.py).
+MIN_INTERVAL = 1.0
+RETRY_BACKOFF = 1.0
 
 def _request(method: str, url: str, params: dict | None = None, json: dict | None = None, headers: dict | None = None) -> dict | list | None:
     global _last_request
     for attempt in range(MAX_RETRIES + 1):
-        wait = 1.0 - (time.monotonic() - _last_request)
+        wait = MIN_INTERVAL - (time.monotonic() - _last_request)
 
         if wait > 0:
             time.sleep(wait)
@@ -21,7 +26,7 @@ def _request(method: str, url: str, params: dict | None = None, json: dict | Non
         _last_request = time.monotonic()
 
         if response.status_code == 503 and attempt < MAX_RETRIES:
-            time.sleep(2 ** attempt)
+            time.sleep(RETRY_BACKOFF * 2 ** attempt)
             continue
 
         if response.status_code == 204:
