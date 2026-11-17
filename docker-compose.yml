@@ -1,42 +1,50 @@
-# Local development: the API and Postgres 16.
-#   docker compose up --build     start everything
-#   docker compose down           stop (data is kept)
-#   docker compose down -v        stop and delete the database
+# Runs the API and a Postgres database on your computer.
 #
-# Postgres settings can be changed in a .env file next to this one
-# (POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB, POSTGRES_PORT).
-# API keys go in server/.env, which the app reads directly.
+#   docker compose up --build    start both
+#   docker compose down          stop both (the database keeps its data)
+#   docker compose down -v       stop both and erase the database
+#
+# To change the database name, user, password or port, put them in a .env
+# file next to this one. API keys go in server/.env.
 
 services:
+  # The database
   db:
     image: postgres:16
+    # These defaults are used unless your .env file sets something else.
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-music}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-music}
       POSTGRES_DB: ${POSTGRES_DB:-music_app}
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
+    # Saves the data outside the container so it isn't lost when it stops.
     volumes:
       - pgdata:/var/lib/postgresql/data
+    # Checks whether the database is ready to accept connections.
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 5s
       timeout: 3s
       retries: 10
 
+  # The API, built from server/Dockerfile
   api:
     build: ./server
+    # Loads API keys from server/.env. It's fine if that file doesn't exist yet.
     env_file:
       - path: ./server/.env
         required: false
+    # Tells the app where the database is. "db" is the database container's name.
     environment:
       DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-music}:${POSTGRES_PASSWORD:-music}@db:5432/${POSTGRES_DB:-music_app}
     ports:
       - "8000:8000"
+    # Don't start the API until the database is ready.
     depends_on:
       db:
         condition: service_healthy
-    # Reload on code changes: mount the local source over the installed copy.
+    # Use the code on your computer, and restart the app whenever you save a file.
     volumes:
       - ./server/app:/app/app
     command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
