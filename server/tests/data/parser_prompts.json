@@ -5,8 +5,7 @@
         "prompt": "late-night drive in the rain, 80s synth stuff",
         "expected": {
             "tags": [
-                "synth-pop",
-                "synthwave"
+                "synth-pop"
             ],
             "exclude_tags": [],
             "mood": "late-night drive in the rain",
@@ -22,7 +21,7 @@
             "seed_artists": [],
             "unsupported": []
         },
-        "notes": "Clear genre and decade. Mood tags should refine the genre, not replace it: moody corners of 80s synth music. Dropped chillwave because it's a 2009+ genre and would match nothing in the 80s range. MusicBrainz spells it 'dark wave' (no hyphen). Scoring: pass if Gemini's mood_tags overlap at least one of these (Gemini returns max 3; this list is every genre we'd accept). mood only needs to be non-null."
+        "notes": "Clear genre and decade. Mood tags should refine the genre, not replace it: moody corners of 80s synth music. Dropped synthwave from tags and chillwave from mood tags: both are modern genres (synthwave is a 2000s+ retro style, chillwave started around 2009), so they would match nothing in the 80s range. MusicBrainz spells it 'dark wave' (no hyphen). Scoring: pass if Gemini's mood_tags overlap at least one of these (Gemini returns max 3; this list is every genre we'd accept). mood only needs to be non-null."
     },
     {
         "id": 2,
@@ -61,7 +60,7 @@
                 "punk rock"
             ],
             "year_min": 2000,
-            "year_max": 2005,
+            "year_max": 2004,
             "seed_artists": [],
             "unsupported": []
         },
@@ -456,18 +455,13 @@
             ],
             "exclude_tags": [],
             "mood": "chill, studying",
-            "mood_tags": [
-                "downtempo",
-                "ambient",
-                "trip hop",
-                "jazz rap"
-            ],
+            "mood_tags": [],
             "year_min": null,
             "year_max": null,
             "seed_artists": [],
             "unsupported": []
         },
-        "notes": "Messy spelling: parser should normalize 'lofi beatz' to the real MusicBrainz genre 'lo-fi hip hop' (verified in the genre list). 'Chill' and 'studyin' are mood."
+        "notes": "Messy spelling: parser should normalize 'lofi beatz' to the real MusicBrainz genre 'lo-fi hip hop' (verified in the genre list). 'Chill' and 'studyin' are mood. mood_tags stays empty because lo-fi hip hop already fits a chill study mood (same rule as #24)."
     },
     {
         "id": 24,
@@ -651,5 +645,25 @@
             "unsupported": []
         },
         "notes": "Tests the 'late' boundary, the counterpart to #3's 'early 2000s'. 'Late 90s' = 1995-1999; scoring should allow slack on the start year."
+    },
+    {
+        "id": 34,
+        "category": "genre_decade",
+        "prompt": "classical music from the 1700s",
+        "expected": {
+            "tags": [
+                "classical"
+            ],
+            "exclude_tags": [],
+            "mood": null,
+            "mood_tags": [],
+            "year_min": null,
+            "year_max": null,
+            "seed_artists": [],
+            "unsupported": [
+                "1700s"
+            ]
+        },
+        "notes": "Tests the year_min 1900 minimum, invalid year goes in unsupported and the year is null"
     }
 ]
