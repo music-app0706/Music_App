@@ -24,3 +24,4 @@ class ParsedRequest(BaseModel):
     seed_artists: list[str] = Field(default_factory=list, max_length=5)
 
     unsupported: list[str] = Field(default_factory=list, max_length=5)
+    
